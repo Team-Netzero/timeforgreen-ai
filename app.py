@@ -52,7 +52,7 @@ def predict(image_bytes, threshold=0.5):
         prob = torch.sigmoid(output).item()
 
     plugged_in = prob <= threshold
-    return {"score": round(prob, 4), "result": "✅ Plugged In" if plugged_in else "❌ Unplugged"}
+    return {"score": round(prob, 4), "result": "true" if plugged_in else "false"}
 
 # -- Flask 라우트 --
 @app.route("/predict", methods=["POST"])
