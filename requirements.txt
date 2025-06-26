@@ -1,0 +1,6 @@
+flask
+azure-storage-blob
+torch
+torchvision
+pillow
+flask-cors
