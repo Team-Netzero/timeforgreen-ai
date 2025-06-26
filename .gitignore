@@ -2,3 +2,4 @@ dataset
 etc
 test-dataset
 .venv
+node_modules
