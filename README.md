@@ -22,16 +22,7 @@ pip install -r requirements.txt
 # 서버 실행
 python app.py
 ```
-
-### 2. Docker로 실행
-
-```bash
-# 빌드 및 실행
-docker build -t plug-ai .
-docker run -p 8080:8080 plug-ai
-```
-
-### 3. docker-compose로 실행
+### 2. docker-compose로 실행
 
 ```bash
 docker-compose up --build
@@ -44,16 +35,16 @@ docker-compose up --build
 ### POST `/predict`
 
 - **요청**: `multipart/form-data`로 이미지 파일(`file` 필드) 전송
-- **응답**: JSON  
-  - `score`: 플러그가 꽂혔을 확률 (0~1)
+- **응답**: JSON
   - `result`: "true" (꽂힘) 또는 "false" (안 꽂힘)
+  - `score`: 플러그가 꽂혔을 확률 (0~1)
 
 #### 예시 응답
 
 ```json
 {
-  "score": 0.1234,
   "result": "false"
+  "score": 0.1234,
 }
 ```
 
@@ -108,5 +99,4 @@ print(response.json())
 
 ## 참고
 
-- 모델 파일(`full_model.pth`)은 Azure Blob Storage에서 자동 다운로드됩니다.
-- 환경에 따라 `connection_string` 등 보안 정보는 별도 관리가 필요할 수 있습니다.
+- 모델 파일(`full_model.pth`)은 Azure Blob Storage에서 자동 다운로드됩니다. (.env 추가 필요)
