@@ -5,7 +5,7 @@ const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
 
-const url = "http://127.0.0.1:8080/predict";
+const url = "http://20.41.122.250:8080/predict";
 const imagePath = "./test-dataset/3.jpeg";
 
 const form = new FormData();
